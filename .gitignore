@@ -1,1 +1,6 @@
+.ash_history
+.npm
+.config
+
+# togetherjs build source
 togetherjs

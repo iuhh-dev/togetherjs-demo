@@ -1,2 +1,4 @@
-makefile
-Dockerfile
+*
+
+!togetherjs/hub
+!togetherjs/node_modules
