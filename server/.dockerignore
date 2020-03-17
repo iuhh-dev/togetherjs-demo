@@ -1,4 +1,13 @@
 *
-
+!server/package.json
 !togetherjs/hub
-!togetherjs/node_modules
+!togetherjs/node_modules/is-typedarray
+!togetherjs/node_modules/ms
+!togetherjs/node_modules/optimist
+!togetherjs/node_modules/websocket
+!togetherjs/node_modules/wordwrap
+!togetherjs/node_modules/minimist
+!togetherjs/node_modules/nan
+!togetherjs/node_modules/typedarray-to-buffer
+!togetherjs/node_modules/websocket-server
+!togetherjs/node_modules/yaeti

@@ -25,10 +25,12 @@ node:
 		$(NODE_IMAGE) sh
 
 docker-build-server:
+	@cp server/.dockerignore .dockerignore
 	@docker build -f server/Dockerfile -t iuhhdev/togetherjs-server:latest .
+	@rm .dockerignore
 
 docker-test-server:
-	@docker run --rm --name temp-server -p 8080:8080 iuhhdev/togetherjs-server
+	@docker run --rm --name temp-server -p 8080:8080 -e HOST="0.0.0.0" iuhhdev/togetherjs-server
 
 docker-test-client:
 	@docker run --rm --name temp-client -p 4200:80 test

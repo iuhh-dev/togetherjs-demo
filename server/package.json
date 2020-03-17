@@ -1,0 +1,5 @@
+{
+    "scripts" : {
+        "start": "node togetherjs/hub/server.js --host $HOST"
+    }
+}

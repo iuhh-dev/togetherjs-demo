@@ -1,6 +1,7 @@
 .ash_history
 .npm
 .config
+./dockerignore
 
 # togetherjs build source
 togetherjs
