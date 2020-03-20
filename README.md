@@ -6,11 +6,24 @@ This project aims to achieve the following:
 
 1. Build TogetherJS server docker image
 1. Build TogetherJS client site for demo (in docker image)
-1. Docker compose to start the demo in local environment [not ready]
+1. Docker compose to start the demo in local environment
 
-*This project is developed by ubuntu environment with docker*
+*This project is developed by ubuntu environment with docker 19.03.3*
 
-## How to use
+## Demo
+
+Use docker compose (provided by docker image) to start server and client in localhost for testing.
+
+The testing URL is: <http://localhost:4200/togetherjs/tests/index.html>
+
+```sh
+# start server and client
+$ make up
+# stop server and client
+$ make down
+```
+
+## Components
 
 ### Server
 
@@ -42,7 +55,7 @@ $ make docker-test-client
 $ docker run --rm --name temp-client -p 4200:80 iuhhdev/togetherjs-client
 ```
 
-### Build from Scratch
+### Build Docker Images from Scratch
 
 ```sh
 $ make build

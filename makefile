@@ -6,6 +6,7 @@ CLIENT_BASE_URL=http://localhost:4200
 node:
 	@docker stop temp || true
 	@docker run -it --rm --name temp \
+		-u $$(id -u):$$(id -g) \
 		-v $$(pwd):/usr/local/src -w /usr/local/src \
 		-e NODE_OPTIONS=--max_old_space_size=4096 \
 		-e NODE_ENV=development \
@@ -37,3 +38,14 @@ docker-test-server:
 
 docker-test-client:
 	@docker run --rm --name temp-client -p 4200:80 iuhhdev/togetherjs-client
+
+up:
+	@docker run -d --rm --name temp-compose -v $$(pwd):/usr/local/src -w /usr/local/src \
+		-v /var/run/docker.sock:/var/run/docker.sock:rw \
+		-v /usr/bin/docker:/usr/bin/docker \
+		-e COMPOSE_PROJECT_NAME=demo \
+		docker/compose up
+	@docker stop temp-compose
+
+down:
+	@docker stop demo_client_1 demo_server_1
